@@ -1,0 +1,25 @@
+import java.util.Scanner;
+class Solution {
+   static public boolean isPalindrome(int x) {
+    int t=x;
+        if(x==0) return true;
+        if(x<0 ) return false;
+
+        int reverse =0;
+        while(x>0){
+            int r= x%10;
+           
+            reverse= reverse*10+r;
+             x/=10;
+        }
+        if(t==reverse ){
+            return true;
+        }else return false;
+        
+    }
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        isPalindrome(n);
+    }
+}
