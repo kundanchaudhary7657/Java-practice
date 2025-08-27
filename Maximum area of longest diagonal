@@ -1,0 +1,20 @@
+class Solution {
+    public int areaOfMaxDiagonal(int[][] dimensions) {
+        double maxdiagonal=0;
+        int maxarea=0;
+        for(int r[]:dimensions){
+            int l=r[0];
+            int w=r[1];
+            double diagonal= Math.sqrt(l*l+w*w);
+            int area= l*w;
+            if(diagonal>maxdiagonal){
+                maxdiagonal=diagonal;
+                maxarea=area;
+            }
+            else if(diagonal==maxdiagonal){
+                maxarea= Math.max(area,maxarea);
+            }
+        }
+        return maxarea;
+    }
+}
